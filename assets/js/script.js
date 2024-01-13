@@ -94,6 +94,23 @@ function validaTel () {
  }
 
 
+ function mascaraCPF() {
+
+   let cpf = document.querySelector('#cpf')
+   
+   const cleanedValue = cpf.value.replace(/\D/g, '');
+ 
+  
+   if (cleanedValue.length > 0) {
+     
+     cpf.value = cleanedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+   } else {
+     
+     cpf.value = '';
+   }
+ }
+
+
  cep.addEventListener('focusout', function(){
 
    let cep_valor = cep.value.replace('-','')
